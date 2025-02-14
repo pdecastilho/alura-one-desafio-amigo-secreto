@@ -2,15 +2,27 @@
 
 const amigos = [];
 const inputName = document.querySelector(".input-name");
+const listaDeNomes = document.querySelector(".name-list");
 
 function adicionarAmigo() {
     let nome = inputName.value;
     if (nome != "") {
         amigos.push(nome);
         inputName.value = "";
+        atualizaListaAmigos();
     } else {
         alert("Por favor, insira um nome.");
     }
+}
+
+function atualizaListaAmigos() {
+    listaDeNomes.innerHTML = "";
+    let itens = "";
+    for (let i = 0; i < amigos.length; i++) {
+        let item = `<li>${amigos[i]}</li>`;
+        itens += item;
+    }
+    listaDeNomes.innerHTML = itens;
 }
 
 /*
