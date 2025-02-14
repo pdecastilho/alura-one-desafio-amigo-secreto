@@ -3,6 +3,7 @@
 const amigos = [];
 const inputName = document.querySelector(".input-name");
 const listaDeNomes = document.querySelector(".name-list");
+const resultado = document.querySelector(".result-list");
 
 function adicionarAmigo() {
     let nome = inputName.value;
@@ -23,6 +24,15 @@ function atualizaListaAmigos() {
         itens += item;
     }
     listaDeNomes.innerHTML = itens;
+}
+
+function sortearAmigo() {
+    if (amigos.length != 0) {
+        let numeroAleatorio = Math.floor(Math.random() * amigos.length);
+        resultado.innerHTML = `<li>${amigos[numeroAleatorio]}</li>`;
+    } else {
+        alert("Primeiro, insira os nomes na lista de amigos.");
+    }
 }
 
 /*
