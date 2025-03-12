@@ -1,9 +1,9 @@
 //O principal objetivo deste desafio é fortalecer suas habilidades em lógica de programação. Aqui você deverá desenvolver a lógica para resolver o problema.
 
 const amigos = [];
-const inputName = document.querySelector(".input-name");
-const listaDeNomes = document.querySelector(".name-list");
-const resultado = document.querySelector(".result-list");
+const inputName = document.querySelector(".main-section__input-name");
+const listaDeNomes = document.querySelector(".list-section__name-list");
+const resultado = document.querySelector(".list-section__result-list");
 
 function adicionarAmigo() {
     let nome = inputName.value;
@@ -28,6 +28,8 @@ function atualizaListaAmigos() {
 
 function sortearAmigo() {
     if (amigos.length != 0) {
+        let listaTitulo = document.querySelector(".list-section__chosen-title");
+        listaTitulo.style.display = "block";
         let numeroAleatorio = Math.floor(Math.random() * amigos.length);
         resultado.innerHTML = `<li>${amigos[numeroAleatorio]}</li>`;
     } else {
